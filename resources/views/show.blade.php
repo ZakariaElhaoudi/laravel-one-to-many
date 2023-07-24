@@ -3,7 +3,7 @@
 @section('content')
     <div class="container ">
         <h1>
-            Città {{ $project -> city }}
+            Progetto {{ $project -> name }}
         </h1>
 
         <div class="card">
@@ -13,7 +13,7 @@
             <div class="card-header">  
                 <h2>
                     <a href="{{ route('show', $project -> id) }}">
-                        {{ $project -> title }}
+                        {{ $project -> name }}
                     </a>
                 </h2>
         

@@ -5,10 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\Project;
 use App\Models\Type;
+use App\Models\Project;
 
-class ProjectSeeder extends Seeder
+class TypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,15 +17,14 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-       $projects = Project::factory()->count(30)->make();
-
+        $projects = Project :: all();
 
         foreach ($projects as $project) {
 
-            $type = Type :: inRandomOrder() -> first();
-
-            $project -> type_id = $type -> id;
-            $project -> save();
+            $type = Type::factory()->create();
+            $project->type_id = $type->id;
+            $project->save();
+            
         }
-    }
+    }  
 }
