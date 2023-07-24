@@ -10,7 +10,8 @@ class Type extends Model
     use HasFactory;
 
     protected $fillable = [
-        'typology',
+        'name',
         'description'
-    ]
+    ];
+    
 }

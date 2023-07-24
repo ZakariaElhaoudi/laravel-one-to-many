@@ -24,8 +24,11 @@ class ProjectSeeder extends Seeder
 
             $type = Type :: inRandomOrder() -> first();
 
-            $project -> type_id = $type -> id;
-            $project -> save();
+            if ($type) {
+                $project -> type_id = $type -> id;
+                $project -> save();
+            }
+          
         }
     }
 }

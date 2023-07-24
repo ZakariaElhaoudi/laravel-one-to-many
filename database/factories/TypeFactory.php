@@ -17,7 +17,7 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-            'typology'=>fake()->word,
+            'name'=>fake()->word,
             'description'=>fake()->paragraph,
         ];
     }
