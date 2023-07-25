@@ -17,14 +17,6 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        $projects = Project :: all();
-
-        foreach ($projects as $project) {
-
-            $type = Type::factory()->create();
-            $project->type_id = $type->id;
-            $project->save();
-            
-        }
+        Type ::factory()->count(30)->create();
     }  
 }

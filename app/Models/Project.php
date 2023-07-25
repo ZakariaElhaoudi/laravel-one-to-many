@@ -14,6 +14,15 @@ class Project extends Model
         'description',
         'author',
         'start_date',
-        'end_date'
+        'end_date',
+        'type_id'
+
     ];
+
+    public function type() {
+
+        return $this -> belongsTo(Type :: class);
+    }
+
+
 }
